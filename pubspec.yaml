@@ -32,6 +32,16 @@ dependencies:
   firebase_auth: "^0.18.1+2"
   flutter_spinkit: "^4.1.2"
   firebase_database: ^4.3.0
+  clippy_flutter: ^1.1.1
+  flutter_appauth: ^0.9.1
+  http: ^0.12.1
+  dio: ^3.0.10
+  ext_storage: ^1.0.3
+  permission_handler: 4.4.0
+  video_player: ^0.10.12+3
+  image_picker: ^0.6.7+7
+  flutter_secure_storage: ^3.3.3
+  path_provider: ^1.6.16
 
 dev_dependencies:
   flutter_test:

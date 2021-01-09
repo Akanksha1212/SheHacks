@@ -1,4 +1,5 @@
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:shehacks/pages/camera.dart';
 import 'package:shehacks/pages/home_page.dart';
 import 'package:shehacks/login/login.dart';
 
@@ -11,7 +12,6 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -29,29 +29,21 @@ class App extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-      // Initialize FlutterFire:
       future: _initialization,
       builder: (context, snapshot) {
-        // Check for errors
         if (snapshot.hasError) {
           return SnackBar(
             content: Text("Something went wrong"),
           );
         }
-
-        // Once complete, show your application
         if (snapshot.connectionState == ConnectionState.done) {
           User user = FirebaseAuth.instance.currentUser;
           if (user != null) {
-            //show home
-            return Home();
+            return CameraScreen();
           } else {
-            //wellcome
             return Login();
           }
         }
-
-        // Otherwise, show something whilst waiting for initialization to complete
         return Splash();
       },
     );
