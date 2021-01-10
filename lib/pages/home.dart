@@ -19,17 +19,24 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Column(
-        children: [
-          SizedBox(
-            height: 50,
-          ),
-          RaisedButton(
-              onPressed: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => Home()),
-                  ))
-        ],
+      body: Container(
+        constraints: BoxConstraints.expand(),
+        decoration: BoxDecoration(
+            image: DecorationImage(
+                image: AssetImage('assets/bg.jpg'), fit: BoxFit.cover)),
+        child: Column(
+          children: [
+            SizedBox(
+              height: 30,
+            ),
+            RaisedButton(
+                color: Colors.transparent,
+                onPressed: () => Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => Home()),
+                    ))
+          ],
+        ),
       ),
     );
   }

@@ -26,7 +26,7 @@ class AddAllergensScreen extends StatelessWidget {
               'Add Allergen',
               style: TextStyle(
                 fontSize: 30,
-                color: Colors.lightBlueAccent,
+                color: Color(0xffb4db9a),
               ),
             )),
             TextField(
@@ -41,7 +41,7 @@ class AddAllergensScreen extends StatelessWidget {
               height: 30,
             ),
             FlatButton(
-              color: Colors.lightBlueAccent,
+              color: Color(0xffb4db9a),
               child: Text(
                 'Add',
                 style: TextStyle(color: Colors.white),

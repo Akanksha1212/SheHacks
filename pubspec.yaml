@@ -28,6 +28,10 @@ dependencies:
   flutter_secure_storage: ^3.3.3
   path_provider: ^1.6.16
   provider: ^4.1.3
+  firebase_ml_vision: ^0.9.8
+  
+  clipboard: ^0.1.2+8
+  google_fonts: ^1.1.1
 
 dev_dependencies:
   flutter_test:

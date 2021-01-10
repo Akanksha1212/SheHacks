@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:shehacks/allergens/widgets/allergens_list.dart';
+import 'package:shehacks/pages/camera.dart';
 import 'add_allergens_screen.dart';
 import 'package:shehacks/allergens/models/allergens.dart';
 import 'package:provider/provider.dart';
@@ -14,9 +15,9 @@ class _AllergensScreenState extends State<AllergensScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.lightBlueAccent,
+      backgroundColor: Color(0xffb4db9a),
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.lightBlueAccent,
+        backgroundColor: Color(0xffb4db9a),
         child: Icon(Icons.add),
         onPressed: () {
           showModalBottomSheet(
@@ -42,14 +43,28 @@ class _AllergensScreenState extends State<AllergensScreen> {
                 SizedBox(
                   height: 10.0,
                 ),
-                Text(
-                  'Allergens',
-                  style: TextStyle(
-                    fontSize: 30.0,
-                    color: Colors.white,
-                    fontWeight: FontWeight.w700,
-                  ),
-                ),
+                Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Text(
+                        'Allergens',
+                        style: TextStyle(
+                          fontSize: 30.0,
+                          color: Colors.white,
+                          fontWeight: FontWeight.w700,
+                        ),
+                      ),
+                      GestureDetector(
+                          onTap: () => Navigator.push(
+                                context,
+                                MaterialPageRoute(builder: (context) => Scan()),
+                              ),
+                          child: Image.asset(
+                            "assets/Logo.png",
+                            height: 70,
+                            width: 70,
+                          )),
+                    ]),
                 Text(
                   '${Provider.of<AllergensData>(context).allergenCount} allergens',
                   style: TextStyle(
