@@ -8,6 +8,8 @@ import 'package:dio/dio.dart';
 import 'package:http_parser/http_parser.dart';
 import 'dart:convert';
 
+import 'package:shehacks/allergens/models/allergens.dart';
+
 class CameraScreen extends StatefulWidget {
   @override
   _CameraScreenState createState() => _CameraScreenState();

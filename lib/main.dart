@@ -1,5 +1,6 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:shehacks/pages/camera.dart';
+import 'package:shehacks/pages/home.dart';
 import 'package:shehacks/pages/home_page.dart';
 import 'package:shehacks/login/login.dart';
 
@@ -39,7 +40,8 @@ class App extends StatelessWidget {
         if (snapshot.connectionState == ConnectionState.done) {
           User user = FirebaseAuth.instance.currentUser;
           if (user != null) {
-            return CameraScreen();
+            // making changes here
+            return HomePage();
           } else {
             return Login();
           }
@@ -54,12 +56,17 @@ class Splash extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.blue,
+      backgroundColor: Color(0xff77d1bc),
       body: Center(
-        child: SpinKitWave(
-          color: Colors.white,
-          size: 50,
-        ),
+        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+          Image(
+            image: AssetImage('assets/Logo.png'),
+          ),
+          SpinKitWave(
+            color: Colors.white,
+            size: 50,
+          ),
+        ]),
       ),
     );
   }
